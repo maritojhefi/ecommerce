@@ -44,6 +44,7 @@ class SiteController extends Controller
     public function index()
     {
         $data['displayPrice'] = preference('display_price_in_shop');
+        dd(option('default_template_page', 'home-slider'));
         $data['slides'] = Slide::whereHas('slider', function ($query) {
             $query->where(['slug' => option('default_template_page', 'home-slider')['slider'], 'status' => 'Active']);
         })->get();
