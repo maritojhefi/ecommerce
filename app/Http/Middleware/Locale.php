@@ -23,7 +23,7 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        $langData = Preference::getAll()->where('field', 'dflt_lang')->first();
+        $langData = Preference::all();
         dd($langData);
         $userId = (int)Cart::userId();
 
