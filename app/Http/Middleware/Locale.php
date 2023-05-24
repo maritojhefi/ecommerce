@@ -23,8 +23,8 @@ class Locale
      */
     public function handle($request, Closure $next)
     {
-        $langData = Preference::where('field', 'dflt_lang')->first();
-        dd($langData);
+        $langData = Preference::getAll()->where('field', 'dflt_lang')->first()->value;
+        // $langData = Preference::where('field', 'dflt_lang')->first()->value;
         $userId = (int)Cart::userId();
 
         if (!empty($userId)  && isset($userId) && Cache::get(config('cache.prefix') . '-user-language-'. $userId)) {
