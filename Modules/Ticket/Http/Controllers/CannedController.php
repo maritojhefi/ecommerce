@@ -11,7 +11,7 @@ use Modules\Ticket\Http\Models\CannedLink;
 use Modules\Ticket\Http\Models\CannedMessage;
 use Illuminate\Http\Request;
 use Auth;
-
+use Illuminate\Support\Facades\Session;
 class CannedController extends Controller
 {
 
@@ -88,7 +88,7 @@ class CannedController extends Controller
             $data['type'] = 'success';
             $data['message'] = __('Deleted Successfully.');
         }
-        \Session::flash($data['type'], $data['message']);
+        Session::flash($data['type'], $data['message']);
         return redirect()->intended('canned/messages');
     }
 
@@ -105,7 +105,7 @@ class CannedController extends Controller
             $data['type'] = 'success';
             $data['message'] = __('Deleted Successfully.');
         }
-        \Session::flash($data['type'], $data['message']);
+        Session::flash($data['type'], $data['message']);
         return redirect()->intended('canned/links');
     }
 

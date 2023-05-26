@@ -1,7 +1,7 @@
 <?php
 
 namespace App\Traits\ModelTraits;
-
+use Illuminate\Support\Facades\Session;
 trait EloquentHelper
 {
     /**
@@ -17,7 +17,7 @@ trait EloquentHelper
             return $data;
         }
 
-        \Session::flash('fail', !is_null($message) ? $message : __('Opps! Data not found.'));
+        Session::flash('fail', !is_null($message) ? $message : __('Opps! Data not found.'));
         return \Redirect::to(url()->previous())->send();
     }
 

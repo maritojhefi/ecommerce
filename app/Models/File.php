@@ -7,6 +7,7 @@ use App\Traits\ModelTrait;
 use App\Traits\ModelTraits\hasFiles;
 use App\Models\User;
 use Auth, Image, Response;
+use Illuminate\Support\Facades\Session;
 
 class File extends Model
 {

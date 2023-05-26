@@ -4,7 +4,7 @@ namespace App\Http\Middleware;
 
 use Illuminate\Auth\Middleware\Authenticate as Middleware;
 use Illuminate\Contracts\Auth\Factory;
-
+use Illuminate\Support\Facades\Session;
 class Authenticate extends Middleware
 {
     /**
@@ -29,7 +29,7 @@ class Authenticate extends Middleware
             ($user->roles->first()->type == 'vendor' && empty($vendor = $user->vendors()->first())) ||
             (!empty($vendor = $user->vendors()->first()) && $vendor->status != 'Active')
         ) {
-            \Session::flash('fail', __('Your seller account is not activate yet. Please contact with site administrator.'));
+            Session::flash('fail', __('Your seller account is not activate yet. Please contact with site administrator.'));
             return \Redirect::to(url()->previous())->send();
         }
     }

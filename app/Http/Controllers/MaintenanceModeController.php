@@ -10,7 +10,7 @@ namespace App\Http\Controllers;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Artisan;
-
+use Illuminate\Support\Facades\Session;
 class MaintenanceModeController extends Controller
 {
 
@@ -36,7 +36,7 @@ class MaintenanceModeController extends Controller
 
                 Artisan::call('down', ['--secret' => $secret]);
 
-                \Session::flash('success', __('Maintenance mode successfully updated.'));
+                Session::flash('success', __('Maintenance mode successfully updated.'));
 
                 return redirect('admin/maintenance-mode?bypass_key=' . $secret);
 

@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use ZipArchive;
 use Illuminate\Support\Facades\Artisan;
 use Modules\Addons\Entities\Addon;
+use Illuminate\Support\Facades\Session;
 
 class AddonManager
 {
@@ -79,7 +80,7 @@ class AddonManager
             return true;
         }
 
-        \Session::flash('fail', __('Your addon is invalid.'));
+        Session::flash('fail', __('Your addon is invalid.'));
         return \Redirect::to(url()->previous())->send();
     }
 }

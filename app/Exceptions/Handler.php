@@ -6,6 +6,7 @@ use App\Traits\ApiResponse;
 use Illuminate\Auth\AuthenticationException;
 use Illuminate\Foundation\Exceptions\Handler as ExceptionHandler;
 use Illuminate\Validation\ValidationException;
+use Illuminate\Support\Facades\Session;
 use Symfony\Component\HttpKernel\Exception\{
     HttpException, MethodNotAllowedHttpException, NotFoundHttpException
 };
@@ -77,7 +78,7 @@ class Handler extends ExceptionHandler
 
         $this->renderable(function (\Illuminate\Http\Exceptions\PostTooLargeException $exception, $request ) {
             if (! $request->is('api/*')) {
-                \Session::flash('fail', __('Your file is too large.'));
+                Session::flash('fail', __('Your file is too large.'));
 
                 return redirect()->back();
             }
