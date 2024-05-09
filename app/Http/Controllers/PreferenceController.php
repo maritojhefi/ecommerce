@@ -46,10 +46,10 @@ class PreferenceController extends Controller
         if ($request->isMethod('get')) {
         	return view('admin.preference.index', $data);
         } else if ($request->isMethod('post')) {
-            if ($this->n_as_k_c()) {
-                Session::flush();
-                return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please verify your purchase code from <a style=\"color:#fcca19\" href=\"". route('purchase-code-check', ['bypass' => 'purchase_code']) ."\">here</a>.")]);
-            }
+            // if ($this->n_as_k_c()) {
+            //     Session::flush();
+            //     return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please verify your purchase code from <a style=\"color:#fcca19\" href=\"". route('purchase-code-check', ['bypass' => 'purchase_code']) ."\">here</a>.")]);
+            // }
             $request['hide_decimal'] = $request['hide_decimal'] ?? 0;
             $request['date_format'] = getDateformatId($request->date_format);
         	$validator = Preference::validation($request->all());

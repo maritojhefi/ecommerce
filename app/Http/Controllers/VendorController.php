@@ -80,10 +80,10 @@ class VendorController extends Controller
             $request['password'] = \Hash::make($request->password);
             $request['email'] = validateEmail($request->email) ? strtolower($request->email) : null;
 
-            if ($this->c_p_c()) {
-                Session::flush();
-                return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please verify your purchase code from <a style=\"color:#fcca19\" href=\"". route('purchase-code-check', ['bypass' => 'purchase_code']) ."\">here</a>.")]);
-            }
+            // if ($this->c_p_c()) {
+            //     Session::flush();
+            //     return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please verify your purchase code from <a style=\"color:#fcca19\" href=\"". route('purchase-code-check', ['bypass' => 'purchase_code']) ."\">here</a>.")]);
+            // }
 
             try {
                 \DB::beginTransaction();
