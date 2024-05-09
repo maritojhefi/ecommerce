@@ -79,17 +79,17 @@ class LoginController extends Controller
                         Cookie::queue($this->ckname, $ckkey, 2592000);
                     }
                     if (auth()->user()->role()->type == 'global') {
-                        if ($this->ncpc()) {
-                            Session::flush();
-                            return view('errors.installer-error', ['message' => __('This product is facing license validation issue.') . "<br>" . __('Please verify your purchase code from :x.', ['x' => '<a style="color:#fcca19" href="' . route('purchase-code-check', ['bypass' => 'purchase_code']) .'">' . __('here') . '</a>'])]);
-                        }
+                        // if ($this->ncpc()) {
+                        //     Session::flush();
+                        //     return view('errors.installer-error', ['message' => __('This product is facing license validation issue.') . "<br>" . __('Please verify your purchase code from :x.', ['x' => '<a style="color:#fcca19" href="' . route('purchase-code-check', ['bypass' => 'purchase_code']) .'">' . __('here') . '</a>'])]);
+                        // }
                         (new ActivityLogService())->userLogin('success', 'Login successful');
                         return redirect()->intended(route('dashboard'));
                     }
-                    if ($this->ncpc()) {
-                        Session::flush();
-                        return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please contact admin to fix the issue.")]);
-                    }
+                    // if ($this->ncpc()) {
+                    //     Session::flush();
+                    //     return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please contact admin to fix the issue.")]);
+                    // }
                     if ( auth()->user()->vendors()->first()->status != 'Active') {
                         (new ActivityLogService())->userLogin('failed', 'Inactive');
                         return redirect()->route('site.index');

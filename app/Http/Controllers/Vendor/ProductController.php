@@ -61,10 +61,10 @@ class ProductController extends Controller
 
     public function createProduct(Request $request)
     {
-        if ($this->ncpc()) {
-            Session::flush();
-            return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please contact admin to fix the issue.")]);
-        }
+        // if ($this->ncpc()) {
+        //     Session::flush();
+        //     return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please contact admin to fix the issue.")]);
+        // }
 
         if ($request->isMethod('get')) {
             $data['brands'] = Brand::getAll()->where('status', 'Active');
@@ -153,10 +153,10 @@ class ProductController extends Controller
         }
 
         if ($request->action == 'update_basic_info_web') {
-            if ($this->ncpc()) {
-                Session::flush();
-                return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please contact admin to fix the issue.")]);
-            }
+            // if ($this->ncpc()) {
+            //     Session::flush();
+            //     return view('errors.installer-error', ['message' => __("This product is facing license validation issue.<br>Please contact admin to fix the issue.")]);
+            // }
         }
 
         return VendorProductAction::execute($request->action, $request);
