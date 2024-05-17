@@ -256,7 +256,7 @@
                     @if (isset($header['bottom']['show_download_app']) && $header['bottom']['show_download_app'] == 1)
                       <div class="hidden md:block">
                         <div class="flex justify-end items-center">
-                            <div class="flex {{ isset($header['bottom']) && count(array_filter($header['bottom'])) == 1 ? 'ml-6' : 'justify-end' }}">
+                            {{-- <div class="flex {{ isset($header['bottom']) && count(array_filter($header['bottom'])) == 1 ? 'ml-6' : 'justify-end' }}">
                                 @php
                                     $textColor = $header['bottom']['text_color'];
                                 @endphp
@@ -318,7 +318,7 @@
                                         @endif
                                     </div>
                                 </div>
-                            </div>
+                            </div> --}}
                         </div>
                       </div>
                     @endif
