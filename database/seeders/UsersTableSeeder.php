@@ -23,7 +23,7 @@ class UsersTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Agatha Williams',
-                'email' => 'admin@techvill.net',
+                'email' => 'contacto@macrobyte.site',
                 'email_verified_at' => NULL,
                 'password' => '$2y$10$zXgnp.9rIXbNYr3ZUo7xVOWUhKKHXJZ63nBgT1zLFgi0CG6RUgfxG',
                 'phone' => NULL,

@@ -23,7 +23,7 @@ class VendorsTableSeeder extends Seeder
             array (
                 'id' => 1,
                 'name' => 'Gizmo Tizmo',
-                'email' => 'admin@techvill.net',
+                'email' => 'contacto@macrobyte.site',
                 'phone' => '01854789632',
                 'formal_name' => 'Agatha Williams',
                 'status' => 'Active',

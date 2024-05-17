@@ -66,14 +66,14 @@ class PreferencesTableSeeder extends Seeder
                 'id' => 10,
                 'category' => 'company',
                 'field' => 'company_email',
-                'value' => 'admin@techvill.net',
+                'value' => 'contacto@macrobyte.site',
             ),
             7 =>
             array (
                 'id' => 11,
                 'category' => 'company',
                 'field' => 'company_phone',
-                'value' => '+12013828901',
+                'value' => '+59163800245',
             ),
             8 =>
             array (

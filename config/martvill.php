@@ -30,7 +30,7 @@ return [
     /* Demo account credentails, Only work when the application on demo mode */
     'credentials' => [
         'admin' => [
-            'email' => 'admin@techvill.net',
+            'email' => 'contacto@macrobyte.site',
             'password' => '123456'
         ],
         'vendor' => [
