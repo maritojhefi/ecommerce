@@ -319,7 +319,7 @@
                             </li>
                         @endif
 
-                        @if (isset($header['main']['show_track']) && $header['main']['show_track'] == 1)
+                        {{-- @if (isset($header['main']['show_track']) && $header['main']['show_track'] == 1)
                             <li class="hidden md:block ml-5">
                                 <a href="{{ route('site.trackOrder') }}" class="relative py-2 block w-fill ">
                                     <div slot="icon" class="relative flex flex-col justify-center items-center">
@@ -332,7 +332,7 @@
                                     </div>
                                 </a>
                             </li>
-                        @endif
+                        @endif --}}
                     </ul>
                 </div>
             </div>
