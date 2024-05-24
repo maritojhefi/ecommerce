@@ -689,8 +689,9 @@ function getUniqueAddress()
 {
     $ip = getIpAddress();
     $userAgent = $_SERVER['HTTP_USER_AGENT'];
-    // return $ip . $userAgent;
-    return $ip;
+    $userAgentHash = hash('crc32b', $userAgent);
+    return $ip . $userAgentHash;
+    // return $ip;
 }
 
 /**
