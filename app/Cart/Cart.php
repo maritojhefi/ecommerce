@@ -535,7 +535,7 @@ class Cart
         } elseif (isset(request()->user_id)) {
             $userId = request()->user_id;
         }
-        // dd($userId);
+        dd($userId);
         return $userId;
     }
 
