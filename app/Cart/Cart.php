@@ -336,8 +336,8 @@ class Cart
         if (!empty(self::userId())) {
             Cache::put(config('cache.prefix') . '.cart.'.self::userId(), $cart, 30 * 86400);
         } else {
-            dd(config('cache.prefix') . '.cart.'.getUniqueAddress());
-            Cache::put(config('cache.prefix') . '.cart.'.getUniqueAddress(), $cart, 30 * 86400);
+            // dd(config('cache.prefix') . '.cart.'.getUniqueAddress());
+            Cache::put(config('cache.prefix') . '.cart.'.'sss', $cart, 30 * 86400);
         }
     }
 
