@@ -336,6 +336,7 @@ class Cart
         if (!empty(self::userId())) {
             Cache::put(config('cache.prefix') . '.cart.'.self::userId(), $cart, 30 * 86400);
         } else {
+            dd(config('cache.prefix') . '.cart.'.getUniqueAddress());
             Cache::put(config('cache.prefix') . '.cart.'.getUniqueAddress(), $cart, 30 * 86400);
         }
     }
@@ -535,7 +536,7 @@ class Cart
         } elseif (isset(request()->user_id)) {
             $userId = request()->user_id;
         }
-        dd($userId);
+        // dd($userId);
         return $userId;
     }
 
