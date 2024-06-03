@@ -70,7 +70,7 @@ class ProductController extends Controller
         ]);
         (new ProductCategory)->store([
             'product_id' => $product->id,
-            'category_id' => 1
+            'category_id' => 534
         ]);
         $request->request->add([
             'permalink' => $product->name,
