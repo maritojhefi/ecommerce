@@ -11,17 +11,16 @@
 
 namespace App\Http\Controllers;
 
-use App\Models\Category;
+use App\DataTables\ProductDataTable;
+use App\Http\Resources\AjaxSelectSearchResource;
+use App\Http\Resources\ProductDetailResource;
+use App\Models\{Attribute, Brand, Category, Order, OrderMeta, Product, ProductCategory, ProductMeta, Tag, Vendor};
+use App\Services\Actions\Facades\ProductActionFacade as ProductAction;
 use Illuminate\Http\Request;
 use Illuminate\Http\JsonResponse;
-use Modules\Tax\Entities\TaxClass;
-use App\DataTables\ProductDataTable;
 use Illuminate\Support\Facades\Session;
 use Modules\Shipping\Entities\ShippingClass;
-use App\Http\Resources\ProductDetailResource;
-use App\Http\Resources\AjaxSelectSearchResource;
-use App\Services\Actions\Facades\ProductActionFacade as ProductAction;
-use App\Models\{Attribute, Brand, Category, Order, OrderMeta, Product, ProductCategory, ProductMeta, Tag, Vendor};
+use Modules\Tax\Entities\TaxClass;
 
 class ProductController extends Controller
 {
@@ -71,7 +70,7 @@ class ProductController extends Controller
         ]);
         (new ProductCategory)->store([
             'product_id' => $product->id,
-            'category_id' => Category::first()->id
+            'category_id' => 534
         ]);
         $request->request->add([
             'permalink' => $product->name,
