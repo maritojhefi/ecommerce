@@ -35,9 +35,10 @@ trait Cachable
      */
     public static function getAll()
     {
-        return self::setCache(function() {
-            return parent::all();
-        });
+        return parent::all();
+        // return self::setCache(function() {
+        //     return parent::all();
+        // });
     }
 
     /**
